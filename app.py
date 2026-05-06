@@ -1,6 +1,7 @@
 import streamlit as st
 import cv2
-import mediapipe as mp
+from mediapipe.python.solutions import hands as mp_hands
+from mediapipe.python.solutions import drawing_utils as mp_draw
 import numpy as np
 import joblib
 import tempfile
@@ -117,7 +118,7 @@ gesture_names = {
 # --------------------------------
 # MEDIAPIPE
 # --------------------------------
-mp_hands = mp.solutions.hands
+mp_draw = mp.solutions.drawing_utils
 
 hands = mp_hands.Hands(
     static_image_mode=False,
